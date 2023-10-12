@@ -1,5 +1,7 @@
 // import React from 'react';
 
+import { Link } from "react-router-dom";
+
 const Header = () => {
     return (
         <div className="navbar fixed z-10 bg-black bg-opacity-30 text-white">
@@ -10,13 +12,7 @@ const Header = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                         <li><a>Item 1</a></li>
-                        <li>
-                            <a>Parent</a>
-                            <ul className="p-2">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
-                            </ul>
-                        </li>
+                        <li><Link to='/menu'>Menu</Link></li>
                         <li><a>Item 3</a></li>
                     </ul>
                 </div>
@@ -24,16 +20,8 @@ const Header = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <li><a>Item 1</a></li>
-                    <li tabIndex={0}>
-                        <details>
-                            <summary>Parent</summary>
-                            <ul className="p-2">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
-                            </ul>
-                        </details>
-                    </li>
+                    <li><Link to='/'>Home</Link></li>
+                    <li><Link to='/menu'>Menu</Link></li>
                     <li><a>Item 3</a></li>
                 </ul>
             </div>

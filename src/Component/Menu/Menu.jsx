@@ -21,7 +21,7 @@ const Menu = () => {
     const pizza = menu.filter(item => item.category === 'pizza');
     const offered = menu.filter(item => item.category === 'offered');
     return (
-        <div>
+        <div className='w-4/5 m-auto'>
             <Helmet>
                 <title>Bistro Boss | Menu</title>
             </Helmet>

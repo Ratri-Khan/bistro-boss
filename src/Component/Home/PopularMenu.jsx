@@ -19,7 +19,7 @@ const PopularMenu = () => {
     //     })
     // },[])
     return (
-        <div>
+        <div className="w-4/5 m-auto">
             <SectionTitle
              heading="From Our Menu"
              subHeading="Popular Items"

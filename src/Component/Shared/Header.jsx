@@ -22,7 +22,7 @@ const Header = () => {
                 <ul className="menu menu-horizontal px-1">
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/menu'>Menu</Link></li>
-                    <li><a>Item 3</a></li>
+                    <li><Link to='/order/salad'>Order</Link></li>
                 </ul>
             </div>
             <div className="navbar-end">

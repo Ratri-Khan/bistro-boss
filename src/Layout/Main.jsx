@@ -5,6 +5,7 @@ import Header from "../Component/Shared/Header";
 const Main = () => {
     const location = useLocation();
     const noHeaderFooter = location.pathname.includes("login");
+    // const noHeaderFooter = location.pathname.includes("login");
     return (
         <div>
             {noHeaderFooter || <Header></Header>}

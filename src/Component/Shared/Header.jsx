@@ -3,13 +3,16 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import useCart from "../../hooks/useCart";
 
 const Header = () => {
-    const {user ,logOut} = useContext(AuthContext);
-    const handleLogOut = () =>{
+    const { user, logOut } = useContext(AuthContext);
+    const [cart] = useCart();
+    const handleLogOut = () => {
         logOut()
-        .then(() =>{})
-        .catch(error =>{console.log(error)})
+            .then(() => { })
+            .catch(error => { console.log(error) })
     }
     return (
         <div className="navbar fixed z-10 bg-black bg-opacity-30 text-white">
@@ -31,20 +34,26 @@ const Header = () => {
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/menu'>Menu</Link></li>
                     <li><Link to='/order/salad'>Order</Link></li>
+                    <li>
+                        <button className="bg-red-400">
+                            <Link to='/order/salad'><AiOutlineShoppingCart className="w-8 h-8"/></Link>
+                            <p>{cart?.length || 0}</p>
+                        </button>
+                    </li>
                 </ul>
             </div>
             <div className="navbar-end">
                 {
                     user ?
-                    <>
-                    <img src={user.photoURL} className='w-14 h-14 rounded-full' alt="" />
-                    <p  onClick={handleLogOut} className="border-2 p-2 cursor-pointer">log out</p>
+                        <>
+                            <img src={user.photoURL} className='w-14 h-14 rounded-full' alt="" />
+                            <p onClick={handleLogOut} className="border-2 p-2 cursor-pointer">log out</p>
 
-                    </>:
-                    <>
-                    <Link to='/login'>Login</Link>
-                <Link to='/signup'>Signup</Link>
-                    </>
+                        </> :
+                        <>
+                            <Link to='/login'>Login</Link>
+                            <Link to='/signup'>Signup</Link>
+                        </>
                 }
             </div>
         </div>

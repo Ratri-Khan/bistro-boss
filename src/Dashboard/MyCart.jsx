@@ -1,9 +1,12 @@
 // import React from 'react';
 
+import useCart from "../hooks/useCart";
+
 const MyCart = () => {
+    const [cart] = useCart();
     return (
         <div>
-            <p>Ratriiiiiiiiiiiiiiiii</p>
+            <p>Total Item : {cart.length}</p>
         </div>
     );
 };

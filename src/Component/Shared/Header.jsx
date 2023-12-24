@@ -36,7 +36,7 @@ const Header = () => {
                     <li><Link to='/order/salad'>Order</Link></li>
                     <li>
                         <button className="bg-red-400">
-                            <Link to='/order/salad'><AiOutlineShoppingCart className="w-8 h-8"/></Link>
+                            <Link to='/dashboard/myCart'><AiOutlineShoppingCart className="w-8 h-8"/></Link>
                             <p>{cart?.length || 0}</p>
                         </button>
                     </li>

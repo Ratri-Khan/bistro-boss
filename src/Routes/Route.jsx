@@ -40,7 +40,7 @@ const router = createBrowserRouter([
         element: <DashBoard></DashBoard>,
         children:[
             {
-                path:'mycart',
+                path:'myCart',
                 element:<MyCart></MyCart>
             }
         ]
